@@ -18,7 +18,6 @@ premier_league = League.create({
   })
 
 
-
 Team.create([
   {
   team_name: "Hull City FC",
@@ -112,7 +111,7 @@ players: "http://api.football-data.org/v1/teams/62/players"
     team_name: "Swansea City FC",
     crest_url: "http://upload.wikimedia.org/wikipedia/de/a/ab/Swansea_City_Logo.svg",
     league: premier_league,
-    fixtures: "href": "http://api.football-data.org/v1/teams/72/fixtures",
+    fixtures: "http://api.football-data.org/v1/teams/72/fixtures",
     self: "http://api.football-data.org/v1/teams/72",
     players: "http://api.football-data.org/v1/teams/72/players"
   },
@@ -152,7 +151,7 @@ players: "http://api.football-data.org/v1/teams/62/players"
   team_name: "Arsenal FC",
   crest_url: "http://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
   league: premier_league,
-  fixtures: "href": "http://api.football-data.org/v1/teams/57/fixtures",
+  fixtures: "http://api.football-data.org/v1/teams/57/fixtures",
   self: "http://api.football-data.org/v1/teams/57",
   players: "http://api.football-data.org/v1/teams/57/players"
 },
