@@ -6,21 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
     <script src="js/app.js"></script>
-
   </head>
   <body>
-    <header>The Matchup
-
-
-      <div data-ng-repeat="league in vm.leagues">
-          <p><a data-ui-sref="songShow({id: song.id})">{{song.title}}</a></p>
-  <!-- <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
-      </div>
-
-
-
-
-    </header>
+    <header>The Matchup</header>
       <main data-ui-view></main>
   </body>
 </html>
