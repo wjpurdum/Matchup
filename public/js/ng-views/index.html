@@ -2,12 +2,35 @@
 <!-- <div data-ng-repeat="league in vm.leagues"> -->
     <!-- <p>{{league.name}}</p> -->
 <!-- <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
-<select>
+<select id="league-select" ng-change="LeagueIndexController.changeTeam()" ng-model="leagues">
   <option value = "0" label = "Select Your League"></option>
-  <option ng-repeat="league in vm.leagues" value="{{league.name}}">
+  <option ng-repeat="league in vm.leagues" value="{{league.name}}" >
     {{league.name}}
   </option>
 </select>
+
+<div class="team-view">
+  <section class = "team">
+    <select>
+      <option value = "0" label = "Select Team A"></option>
+      <option ng-repeat="league in vm.leagues" value="{{league.name}}">
+        {{league.name}}
+      </option>
+    </select>
+  </section>
+
+  <section class = "team">
+    <select>
+      <option value = "0" label = "Select Team B"></option>
+      <option ng-repeat="league in vm.leagues" value="{{league.name}}">
+        {{league.name}}
+      </option>
+    </select>
+  </section>
+
+
+
+</div>
 
 
 

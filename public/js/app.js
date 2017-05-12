@@ -1,3 +1,6 @@
+
+
+
 angular
   .module("matchup", [
     "ui.router",
@@ -16,8 +19,10 @@ angular
     TeamFactoryFunction
   ])
   .controller("LeagueIndexController", [
+    // changeTeam,
     "LeagueFactory",
-    LeagueIndexControllerFunction
+    LeagueIndexControllerFunction,
+
   ])
   .controller("LeagueShowController", [
     "LeagueFactory",
@@ -33,6 +38,7 @@ angular
     "$stateParams",
     TeamShowControllerFunction
   ])
+
 
 
   function RouterFunction($stateProvider) {
@@ -71,8 +77,13 @@ function TeamFactoryFunction($resource) {
 }
 
 function LeagueIndexControllerFunction(LeagueFactory) {
-  this.leagues = LeagueFactory.query();
-}
+this.leagues = LeagueFactory.query();
+function changeTeam() {
+  console.log("function running!")
+  var selectedLeague = document.getElementById('league-select').value;
+  console.log(selectedLeague)
+  }
+  }
 
 function TeamShowControllerFunction(){
   this.team = TeamFactory.get({id: $stateParams.id})
