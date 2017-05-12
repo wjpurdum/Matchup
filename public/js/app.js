@@ -28,7 +28,12 @@ angular
 
   function RouterFunction($stateProvider) {
     $stateProvider
-    .state("LeagueIndexControllerFunction")
+    .state("LeagueIndex", {
+      templateUrl: "/"
+      templateUrl: "index.html"
+      controller: "LeagueIndexController",
+      controllerAs: "vm"
+    })
 
   }
 
