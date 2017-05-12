@@ -1,6 +1,12 @@
 angular
-  .module("matchup", ["ui.router", "ngResource"])
-  .config(["$stateProvider", RouterFunction])
+  .module("matchup", [
+    "ui.router",
+    "ngResource"
+  ])
+  .config([
+    "$stateProvider",
+    RouterFunction
+  ])
   .factory("teamFactory", [
     "$resource",
     TeamFactoryFunction
@@ -22,26 +28,23 @@ angular
     TeamShowControllerFunction
   ])
 
-  ])
+// FUNCTIONS
 
-  // FUNCTIONS
+function RouterFunction($stateProvider) {
+  $stateProvider
+}
 
-  function RouterFunction($stateProvider) {
-    $stateProvider
-    .state("LeagueIndexControllerFunction")
+function TeamFactoryFunction() {
 
-  }
+}
 
+function LeagueFactoryFunction() {
 
+}
 
-  function TeamFactoryFunction() {
+function LeagueIndexControllerFunction() {
 
-  }
+}
+function LeagueIndexControllerFunction() {
 
-  function LeagueFactoryFunction() {
-
-  }
-
-  function LeagueIndexControllerFunction() {
-
-  }
+}
