@@ -28,7 +28,24 @@ angular
     TeamShowControllerFunction
   ])
 
+<<<<<<< HEAD
 // FUNCTIONS
+=======
+  ])
+
+  // FUNCTIONS
+
+  function RouterFunction($stateProvider) {
+    $stateProvider
+    .state("LeagueIndex", {
+      templateUrl: "/"
+      templateUrl: "index.html"
+      controller: "LeagueIndexController",
+      controllerAs: "vm"
+    })
+
+  }
+>>>>>>> Whitney_Day_Two
 
 function RouterFunction($stateProvider) {
   $stateProvider

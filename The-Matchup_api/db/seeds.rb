@@ -20,6 +20,8 @@ English_league = English.create({
   name: "English "
   })
 
+
+
 Team.create([
   {
   team_name: "Hull City FC",
@@ -180,5 +182,120 @@ players: "http://api.football-data.org/v1/teams/62/players"
   fixtures: "http://api.football-data.org/v1/teams/563/fixtures",
   self: "http://api.football-data.org/v1/teams/563",
   players: "http://api.football-data.org/v1/teams/563/players"
-}
+},
+  {
+    team_name: "West Ham United FC",
+    crest_url: "http://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg",
+    league: premier_league,
+    fixtures: "http://api.football-data.org/v1/teams/563/fixtures",
+    self: "http://api.football-data.org/v1/teams/563",
+    players: "http://api.football-data.org/v1/teams/563/players"
+  },
+  {
+    team_name: "Barnsley FC",
+    crest_url: "http://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/357/fixtures",
+    self: "http://api.football-data.org/v1/teams/357",
+    players: "http://api.football-data.org/v1/teams/357/players"
+  },
+  {
+    team_name: "Huddersfield Town",
+    crest_url: "https://upload.wikimedia.org/wikipedia/commons/6/66/Huddersfield_Town_F.C.png",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/394/fixtures",
+    self: "http://api.football-data.org/v1/teams/394",
+    players: "http://api.football-data.org/v1/teams/394/players"
+  },
+  {
+    team_name: "Brentford FC",
+    crest_url: "",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/402/fixtures",
+    self: "http://api.football-data.org/v1/teams/402",
+    players: "http://api.football-data.org/v1/teams/402/players"
+
+  },
+  {
+    team_name: "Birmingham City",
+    crest_url: "https://upload.wikimedia.org/wikipedia/en/6/68/Birmingham_City_FC_logo.svg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/332/fixtures",
+    self: "http://api.football-data.org/v1/teams/332",
+    players: "http://api.football-data.org/v1/teams/332/players"
+  },
+  {
+    team_name: "Cardiff City FC",
+    crest_url: "http://upload.wikimedia.org/wikipedia/de/c/c6/Cardiff_City_Logo.png",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/387/fixtures",
+    self: "http://api.football-data.org/v1/teams/387",
+    players: "http://api.football-data.org/v1/teams/387/players"
+  },
+  {
+    team_name: "Cardiff City FC",
+    crest_url: "http://upload.wikimedia.org/wikipedia/de/c/c6/Cardiff_City_Logo.png",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/715/fixtures",
+    self: "http://api.football-data.org/v1/teams/715",
+    players: "http://api.football-data.org/v1/teams/715/players"
+  },
+  {
+    team_name: "Bristol City",
+    crest_url: "",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/387/fixtures",
+    self: "http://api.football-data.org/v1/teams/387",
+    players: "http://api.football-data.org/v1/teams/387/players"
+  },
+  {
+    team_name: "Wigan Athletic FC",
+    crest_url: "https://upload.wikimedia.org/wikipedia/en/4/43/Wigan_Athletic.svg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/75/fixtures",
+    self: "http://api.football-data.org/v1/teams/75",
+    players: "http://api.football-data.org/v1/teams/75/players"
+  },
+  {
+    team_name: "Brighton & Hove Albion",
+    crest_url: "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_&_Hove_Albion_logo.svg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/397/fixtures",
+    self: "http://api.football-data.org/v1/teams/397",
+    players: "http://api.football-data.org/v1/teams/397/players"
+  },
+  {
+    team_name: "Queens Park Rangers",
+    crest_url: "http://upload.wikimedia.org/wikipedia/de/d/d4/Queens_Park_Rangers.svg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/69/fixtures",
+    self: "http://api.football-data.org/v1/teams/69",
+    players: "http://api.football-data.org/v1/teams/69/players"
+  },
+  {
+    team_name: "Leeds United",
+    crest_url: "",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/341/fixtures",
+    self: "http://api.football-data.org/v1/teams/341",
+    players: "http://api.football-data.org/v1/teams/341/players"
+  },
+  {
+    team_name: "Sheffield Wednesday",
+    crest_url: "https://upload.wikimedia.org/wikipedia/en/8/86/Sheffield_Wednesday_crest_from_2016.jpg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/345/fixtures",
+    self: "http://api.football-data.org/v1/teams/345",
+    players: "http://api.football-data.org/v1/teams/345/players"
+  },
+  {
+    team_name: "Aston Villa FC",
+    crest_url: "http://upload.wikimedia.org/wikipedia/de/9/9f/Aston_Villa_logo.svg",
+    league: english_league,
+    fixtures: "http://api.football-data.org/v1/teams/58/fixtures",
+    self: "http://api.football-data.org/v1/teams/58",
+    players: "http://api.football-data.org/v1/teams/58/players"
+
+  }
+
    ])
