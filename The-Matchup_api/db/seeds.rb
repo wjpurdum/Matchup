@@ -16,8 +16,11 @@ premier_league = League.create({
   number_teams: 20,
   year: 2016
   })
-English_league = English.create({
-  name: "English "
+english_league = League.create({
+  name: "English League Championship"
+  number_matches: 62,
+  number_teams: 32,
+  year: 2016
   })
 
 
@@ -296,6 +299,102 @@ players: "http://api.football-data.org/v1/teams/62/players"
     self: "http://api.football-data.org/v1/teams/58",
     players: "http://api.football-data.org/v1/teams/58/players"
 
-  }
+  },
+{
+  team_name: "Fulham FC",
+  crest_url:"http://upload.wikimedia.org/wikipedia/de/a/a8/Fulham_fc.svg",
+  league: english_league,
+  fixtures: "http://api.football-data.org/v1/teams/63/fixtures ",
+  self: "http://api.football-data.org/v1/teams/63 ",
+  players: "http://api.football-data.org/v1/teams/63/players "
+},
+{
+  team_name: "Newcastle United FC",
+  crest_url:"http://upload.wikimedia.org/wikipedia/de/5/56/Newcastle_United_Logo.svg",
+  league: english_league,
+  fixtures: "http://api.football-data.org/v1/teams/67/fixtures ",
+  self: " http://api.football-data.org/v1/teams/67",
+  players: "http://api.football-data.org/v1/teams/67/players "
+},
+{
+  team_name: "Blackburn Rovers FC",
+  crest_url:" ",
+  league: english_league,
+  fixtures: " http://api.football-data.org/v1/teams/59/fixtures",
+  self: " http://api.football-data.org/v1/teams/59",
+  players: " http://api.football-data.org/v1/teams/59/players"
+},
+{
+  team_name: "Norwich City FC",
+  crest_url:"http://upload.wikimedia.org/wikipedia/de/8/8c/Norwich_City.svg",
+  league: english_league,
+  fixtures: " http://api.football-data.org/v1/teams/68/fixtures",
+  self: "http://api.football-data.org/v1/teams/68 ",
+  players: "http://api.football-data.org/v1/teams/68/players "
+},
+{
+  team_name: "Rotherham United",
+  crest_url:"https://upload.wikimedia.org/wikipedia/en/c/c0/Rotherham_United_FC.svg",
+  league: english_league,
+  fixtures: "http://api.football-data.org/v1/teams/385/fixtures ",
+  self: "http://api.football-data.org/v1/teams/385 ",
+  players: "http://api.football-data.org/v1/teams/385/players "
+},
+{
+  team_name: "Wolverhampton Wanderers FC",
+  crest_url:"",
+  league: english_league,
+  fixtures: "http://api.football-data.org/v1/teams/76/fixtures ",
+  self: "http://api.football-data.org/v1/teams/76 ",
+  players: "http://api.football-data.org/v1/teams/76/players "
+},
+{
+  team_name: "Reading",
+  crest_url:"",
+  league: english_league,
+  fixtures: " http://api.football-data.org/v1/teams/355/fixtures",
+  self: "http://api.football-data.org/v1/teams/355 ",
+  players: " http://api.football-data.org/v1/teams/355/players"
+},
+{
+  team_name: "Preston North End",
+  crest_url:"",
+  league: english_league,
+  fixtures: "http://api.football-data.org/v1/teams/1081/fixtures ",
+  self: "http://api.football-data.org/v1/teams/1081 ",
+  players: "http://api.football-data.org/v1/teams/1081/players "
+},
+{
+  team_name: "",
+  crest_url:"",
+  league: english_league,
+  fixtures: " ",
+  self: "http://api.football-data.org/v1/teams/351 ",
+  players: " "
+},
+{
+  team_name: "Nottingham Forest",
+  crest_url:"https://upload.wikimedia.org/wikipedia/en/d/d2/Nottingham_Forest_logo.svg",
+  league: english_league,
+  fixtures: " http://api.football-data.org/v1/teams/351/fixtures",
+  self: "http://api.football-data.org/v1/teams/351 ",
+  players: "http://api.football-data.org/v1/teams/351/players "
+},
+{
+  team_name: "Burton Albion FC",
+  crest_url:"https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Burton_Albion_FC_logo.svg/847px-Burton_Albion_FC_logo.svg.png",
+  league: english_league,
+  fixtures: "http://api.football-data.org/v1/teams/1072/fixtures ",
+  self: "http://api.football-data.org/v1/teams/1072 ",
+  players: " http://api.football-data.org/v1/teams/1072/players"
+},
+{
+  team_name: "Ipswich Town",
+  crest_url:"https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
+  league: english_league,
+  fixtures: " http://api.football-data.org/v1/teams/349/fixtures",
+  self: "http://api.football-data.org/v1/teams/349 ",
+  players: "http://api.football-data.org/v1/teams/349/players "
+},
+])
 
-   ])
