@@ -73,16 +73,19 @@ function TeamFactoryFunction($resource) {
 }
 
 function LeagueIndexControllerFunction($scope, $http, LeagueFactory) {
-  this.leagues = LeagueFactory.query();
+  this.leagues = LeagueFactory.query()
 
+  // Use API call to access fixture data
   var url = "http://api.football-data.org/v1/competitions/426/fixtures";
     $http.get(url).success( function(response) {
-       $scope.leagues = response;
-       let allFixtures = response.fixtures;
-       let teamOne = "Southampton FC";
+       $scope.leagues = response
+       // Set all fixtures into a variable
+       let allFixtures = response.fixtures
+       // Assign variables to drop down selection of teams
+       let teamOne = "Southampton FC"
        let teamTwo = "Stoke City FC"
        console.log(allFixtures)
-       // Loop through fixtures and print fixture that matches team names
+       // Loop through fixtures and print fixture that selected team shares
        for(var i = 0; i < allFixtures.length; i++){
           if((teamOne == allFixtures[i].homeTeamName || teamOne == allFixtures[i].awayTeamName) && (teamTwo == allFixtures[i].homeTeamName || teamTwo == allFixtures[i].awayTeamName)){
             console.log(allFixtures[i])
@@ -100,5 +103,5 @@ function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
 }
 
 function TeamIndexControllerFunction(TeamFactory, $stateParams) {
-  this.teams = TeamFactory.query();
+  this.teams = TeamFactory.query()
 }
