@@ -9,16 +9,11 @@
 
   </head>
   <body>
-    <header>The Matchup
-
-
-      <div data-ng-repeat="league in vm.leagues">
-          <p><a data-ui-sref="songShow({id: song.id})">{{song.title}}</a></p>
-  <!-- <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
-      </div>
-
-
-
+    <header>
+    <h1>The Matchup</h1>
+      <!-- <div data-ng-repeat="team in vm.teams">
+          <p>{{vm.team.name}}</p>
+  <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
 
     </header>
       <main data-ui-view></main>

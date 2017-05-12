@@ -7,35 +7,39 @@ angular
     "$stateProvider",
     RouterFunction
   ])
-  .factory("factory", [
+  .factory("LeagueFactory", [
     "$resource",
-    FactoryFunction
+    LeagueFactoryFunction
   ])
-  // .factory("LeagueFactory", [
-  //   "$resource",
-  //   LeagueFactoryFunction
-  // ])
+  .factory("TeamFactory", [
+    "$resource",
+    TeamFactoryFunction
+  ])
   .controller("LeagueIndexController", [
     "LeagueFactory",
     LeagueIndexControllerFunction
   ])
-  // .controller("TeamIndexController", [
-  //   "TeamFactory",
-  //   TeamIndexControllerFunction
-  // ])
+  .controller("LeagueShowController", [
+    "LeagueFactory",
+    "$stateParams",
+    LeagueShowControllerFunction
+  ])
+  .controller("TeamIndexController", [
+    "TeamFactory",
+    TeamIndexControllerFunction
+  ])
   .controller("TeamShowController", [
     "TeamFactory",
+    "$stateParams",
     TeamShowControllerFunction
   ])
 
 
-  // FUNCTIONS
-
   function RouterFunction($stateProvider) {
     $stateProvider
-    .state("LeagueIndex", {
-      templateUrl: "/",
-      templateUrl: "index.html",
+    .state("leagueIndex", {
+      url: "/",
+      templateUrl: "js/ng-views/index.html",
       controller: "LeagueIndexController",
       controllerAs: "vm"
     })
@@ -45,21 +49,39 @@ angular
       controller: "TeamShowController",
       controllerAs: "vm"
     })
-
+    .state("leagueShow", {
+      url: "/leagues/:id",
+      templateUrl: "js/ng-views/league.html",
+      controller: "LeagueShowController",
+      controllerAs: "vm"
+    })
+    .state("teamIndex", {
+      url: "/leagues/:id/teams",
+      templateUrl: "js/ng-views/.html",
+      controller: "TeamIndexControllerFunction",
+      controllerAs: "vm"
+    })
   }
 
-// When you select one team, the URL will change to that ID, and then when yo select hte second team
-function FactoryFunction($resource) {
-  return $resource("http://localhost:3000/teams/:id.json")
+function LeagueFactoryFunction($resource) {
+  return $resource("http://localhost:3000/leagues")
 }
-// function LeagueFactoryFunction($resource) {
-//   return $resource("http://locahost:3000")
-// }
+function TeamFactoryFunction($resource) {
+  return $resource("http://locahost:3000/teams/:id")
+}
 
-function LeagueIndexControllerFunction() {
+function LeagueIndexControllerFunction(LeagueFactory) {
   this.leagues = LeagueFactory.query();
 }
 
 function TeamShowControllerFunction(){
   this.team = TeamFactory.get({id: $stateParams.id})
+}
+
+function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
+  this.league = LeagueFactory.get({id: $stateParams.id})
+}
+
+function TeamIndexControllerFunction(TeamFactory, $stateParams) {
+  this.teams = TeamFactory.query();
 }
