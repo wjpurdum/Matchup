@@ -1,7 +1,15 @@
 <h2>Select Your League</h2>
-<div data-ng-repeat="league in vm.leagues">
-    <p>{{league.name}}</p>
+<!-- <div data-ng-repeat="league in vm.leagues"> -->
+    <!-- <p>{{league.name}}</p> -->
 <!-- <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
-</div>
+<select>
+  <option value = "0" label = "Select Your League"></option>
+  <option ng-repeat="league in vm.leagues" value="{{league.name}}">
+    {{league.name}}
+  </option>
+</select>
 
-{{2 + 2}}
+
+
+
+<!-- </div> -->
