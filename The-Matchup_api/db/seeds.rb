@@ -17,7 +17,7 @@ premier_league = League.create({
   year: 2016
   })
 english_league = League.create({
-  name: "English League Championship"
+  name: "English League Championship",
   number_matches: 62,
   number_teams: 32,
   year: 2016
@@ -397,4 +397,3 @@ players: "http://api.football-data.org/v1/teams/62/players"
   players: "http://api.football-data.org/v1/teams/349/players "
 },
 ])
-
