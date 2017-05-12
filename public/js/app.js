@@ -28,11 +28,25 @@ angular
     TeamShowControllerFunction
   ])
 
+
+
+  // FUNCTIONS
+
+  function RouterFunction($stateProvider) {
+    $stateProvider
+    .state("LeagueIndex", {
+      templateUrl: "/"
+      templateUrl: "index.html"
+      controller: "LeagueIndexController",
+      controllerAs: "vm"
+    })
+
+  }
+
 // FUNCTIONS
 
-function RouterFunction($stateProvider) {
-  $stateProvider
-}
+
+
 
 function TeamFactoryFunction() {
 
