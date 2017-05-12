@@ -16,7 +16,9 @@ premier_league = League.create({
   number_teams: 20,
   year: 2016
   })
-
+English_league = English.create({
+  name: "English "
+  })
 
 Team.create([
   {
