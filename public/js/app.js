@@ -7,26 +7,27 @@ angular
     "$stateProvider",
     RouterFunction
   ])
-  .factory("teamFactory", [
+  .factory("factory", [
     "$resource",
-    TeamFactoryFunction
+    FactoryFunction
   ])
-  .factory("LeagueFactory", [
-    "$resource",
-    LeagueFactoryFunction
-  ])
+  // .factory("LeagueFactory", [
+  //   "$resource",
+  //   LeagueFactoryFunction
+  // ])
   .controller("LeagueIndexController", [
     "LeagueFactory",
     LeagueIndexControllerFunction
   ])
-  .controller("TeamIndexController", [
-    "TeamFactory",
-    TeamIndexControllerFunction
-  ])
+  // .controller("TeamIndexController", [
+  //   "TeamFactory",
+  //   TeamIndexControllerFunction
+  // ])
   .controller("TeamShowController", [
     "TeamFactory",
     TeamShowControllerFunction
   ])
+
 
   // FUNCTIONS
 
@@ -38,20 +39,27 @@ angular
       controller: "LeagueIndexController",
       controllerAs: "vm"
     })
+    .state("teamShow", {
+      url: "/teams/:id",
+      templateUrl: "js/ng-views/team.html",
+      controller: "TeamShowController",
+      controllerAs: "vm"
+    })
 
   }
 
-function TeamFactoryFunction() {
-
+// When you select one team, the URL will change to that ID, and then when yo select hte second team
+function FactoryFunction($resource) {
+  return $resource("http://localhost:3000/teams/:id.json")
 }
-
-function LeagueFactoryFunction() {
-
-}
+// function LeagueFactoryFunction($resource) {
+//   return $resource("http://locahost:3000")
+// }
 
 function LeagueIndexControllerFunction() {
-
+  this.leagues = LeagueFactory.query();
 }
-function LeagueIndexControllerFunction() {
 
+function TeamShowControllerFunction(){
+  this.team = TeamFactory.get({id: $stateParams.id})
 }
