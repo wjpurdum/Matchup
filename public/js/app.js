@@ -52,7 +52,7 @@ angular
     $stateProvider
     .state("leagueIndex", {
       url: "/",
-      templateUrl: "js/ng-views/index.html",
+      templateUrl: "js/ng-views/leagues/index.html",
       controller: "LeagueIndexController",
       controllerAs: "vm"
     })
