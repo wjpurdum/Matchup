@@ -1,4 +1,20 @@
 .team-view {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.team-display {
+  justify-content: space-around;
+
+}
+
+h3 {
+  text-align: center;
 }

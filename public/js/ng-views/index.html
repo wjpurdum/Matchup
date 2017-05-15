@@ -3,7 +3,7 @@
     <!-- <p>{{league.name}}</p> -->
 <!-- <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
 <select id="league-select" ng-change="LeagueIndexController.changeTeam()" ng-model="leagues">
-  <option value = "0" label = "Select Your League"></option>
+  <!-- <option value = "0" label = "Select Your League"></option> -->
   <option ng-repeat="league in vm.leagues" value="{{league.name}}" >
     {{league.name}}
   </option>
@@ -13,24 +13,36 @@
   <section class = "team">
     <select>
       <option value = "0" label = "Select Team A"></option>
-      <option ng-repeat="league in vm.leagues" value="{{league.name}}">
-        {{league.name}}
+      <option ng-repeat="team in vm.teams" value="{{team.name}}">
+        {{team.name}}
       </option>
     </select>
   </section>
 
-  <section class = "team">
+
+  <div class = "team">
     <select>
       <option value = "0" label = "Select Team B"></option>
-      <option ng-repeat="league in vm.leagues" value="{{league.name}}">
-        {{league.name}}
+      <option ng-repeat="team in vm.teams" value="{{team.name}}">
+        {{team.name}}
       </option>
     </select>
-  </section>
-
-
-
+  </div>
 </div>
+
+  <div class = "team-info">
+    <div class="team-display">
+      <p>This is where we'll put Team 1 players and fixtures</p>
+    </div>
+    <div class="team-display">
+      <p>This is where we'll put Team 2 players and fixtures</p>
+    </div>
+  </div>
+
+  <h3>FIXTURES</h3>
+
+
+
 
 
 
