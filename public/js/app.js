@@ -21,6 +21,7 @@ angular
   .controller("LeagueIndexController", [
     // changeTeam,
     "LeagueFactory",
+    "$state",
     LeagueIndexControllerFunction,
 
   ])
@@ -76,13 +77,14 @@ function TeamFactoryFunction($resource) {
   return $resource("http://locahost:3000/teams/:id")
 }
 
-function LeagueIndexControllerFunction(LeagueFactory) {
+function LeagueIndexControllerFunction(LeagueFactory, $state) {
 this.leagues = LeagueFactory.query();
+this.changeTeam = changeTeam
 function changeTeam() {
   console.log("function running!")
-  var selectedLeague = document.getElementById('league-select').value;
-  console.log(selectedLeague)
-  }
+  var selectedLeague = this.league;
+  console.log(this.league)
+    }
   }
 
 function TeamShowControllerFunction(){
