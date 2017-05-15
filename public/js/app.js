@@ -87,13 +87,16 @@ function changeTeam() {
     }
   }
 
+function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
+    this.league = LeagueFactory.get({id: $stateParams.id})
+    this.teams =
+  }
+
 function TeamShowControllerFunction(){
   this.team = TeamFactory.get({id: $stateParams.id})
 }
 
-function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
-  this.league = LeagueFactory.get({id: $stateParams.id})
-}
+
 
 function TeamIndexControllerFunction(TeamFactory, $stateParams) {
   this.teams = TeamFactory.query();

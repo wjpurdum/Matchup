@@ -6,18 +6,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/teamshowcontroller.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
     <header>
     <h1><a data-ui-sref="leagueIndex">The Matchup</a></h1>
-      <!-- <div data-ng-repeat="team in vm.teams">
-          <p>{{vm.team.name}}</p>
-  <a data-ui-sref="grumbleEdit({id: grumble.id})">Edit</a> -->
+
+    <button class="button">Click Me!</button>
+
     </header>
+    <main data-ui-view></main>
 
-
-      <main data-ui-view></main>
+    <a data-ui-sref="teamShow">Single Team Page</a>
   </body>
 </html>
