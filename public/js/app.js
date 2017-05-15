@@ -22,6 +22,8 @@ angular
     LeagueIndexControllerFunction
   ])
   .controller("LeagueShowController", [
+    "$scope",
+    "$http",
     "LeagueFactory",
     "$stateParams",
     LeagueShowControllerFunction
@@ -74,31 +76,15 @@ function TeamFactoryFunction($resource) {
   return $resource("http://localhost:3000/leagues/:id/teams/:id")
 }
 
-function LeagueIndexControllerFunction($scope, $http, LeagueFactory) {
+function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   this.leagues = LeagueFactory.query()
   console.log(this.league)
   // Use API call to access fixture data
-  let url = "http://api.football-data.org/v1/competitions/426/fixtures"
-  $http.get(url).success( function(response) {
-     $scope.leagues = response
-     // Set all fixtures into a variable
-     let allFixtures = response.fixtures
-     // Assign variables to drop down selection of teams
-     let teamOne = "Southampton FC"
-     let teamTwo = "Stoke City FC"
-     console.log(allFixtures)
-     // Loop through fixtures and print fixture that selected team shares
-     for(var i = 0; i < allFixtures.length; i++){
-        if((teamOne == allFixtures[i].homeTeamName || teamOne == allFixtures[i].awayTeamName) && (teamTwo == allFixtures[i].homeTeamName || teamTwo == allFixtures[i].awayTeamName)){
-          console.log(allFixtures[i])
-        }
-     }
-  })
 }
 
 function TeamShowControllerFunction($scope, $http, $stateParams, $resource, TeamFactory){
   // this.team = TeamFactory.get({id: $stateParams.id})
-
+  let self = this
   // Use API call to access player data
   let url = "http://api.football-data.org/v1/teams/340/players"
   $http.get(url).success( function(response) {
@@ -117,9 +103,39 @@ function TeamShowControllerFunction($scope, $http, $stateParams, $resource, Team
   })
 }
 
-function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
+function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
-  console.log('works')
+
+  this.fixtures = []
+
+  this.teamOne = "0"
+  this.teamTwo = "0"
+
+  let self = this
+
+  this.grabFixtures = function(){
+    console.log('clicked')
+  let url = "http://api.football-data.org/v1/competitions/426/fixtures"
+    $http.get(url, {headers:{'X-Auth-Token':'f6cb91b4ca1a41bd9f94afbbe66c06d1'}})
+      .success( function(response) {
+         //$scope.leagues = response
+         // Set all fixtures into a variable
+         let allFixtures = response.fixtures
+
+         self.fixtures = []
+
+         console.log(allFixtures)
+         // Loop through fixtures and print fixture that selected team shares
+         for(var i = 0; i < allFixtures.length; i++){
+            if((self.teamOne == allFixtures[i].homeTeamName || self.teamOne == allFixtures[i].awayTeamName)
+            && (self.teamTwo == allFixtures[i].homeTeamName || self.teamTwo == allFixtures[i].awayTeamName)){
+              console.log(allFixtures[i])
+              self.fixtures.push(allFixtures[i])
+              console.log(self.fixtures)
+            }
+         }
+      })
+  }
 }
 
 function TeamIndexControllerFunction(TeamFactory, $stateParams) {
