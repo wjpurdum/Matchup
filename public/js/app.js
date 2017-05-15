@@ -119,6 +119,7 @@ function TeamShowControllerFunction($scope, $http, $stateParams, $resource, Team
 
 function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
+  console.log('works')
 }
 
 function TeamIndexControllerFunction(TeamFactory, $stateParams) {

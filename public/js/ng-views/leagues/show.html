@@ -4,7 +4,7 @@
     <select>
       <option value = "0" label = "Select Team A"></option>
       <option ng-repeat="team in vm.league.teams" value="{{team.team_name}}">
-
+        {{team.team_name}}
       </option>
     </select>
 
@@ -17,8 +17,8 @@
   <div class = "team">
     <select>
       <option value = "0" label = "Select Team B"></option>
-      <option ng-repeat="team in vm.league.team" value="{{team.name}}">
-        {{team.name}}
+      <option ng-repeat="team in vm.league.teams" value="{{team.team_name}}">
+        {{team.team_name}}
       </option>
     </select>
   </div>
