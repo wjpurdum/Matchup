@@ -1,0 +1,36 @@
+<h2>League Name</h2>
+<div class="team-view">
+  <section class = "team">
+    <select>
+      <option value = "0" label = "Select Team A"></option>
+      <option ng-repeat="team in vm.league.teams" value="{{team.team_name}}">
+
+      </option>
+    </select>
+
+    <div ng-repeat="league in vm.league">
+      {{ league.name }}
+    </div>
+  </section>
+
+
+  <div class = "team">
+    <select>
+      <option value = "0" label = "Select Team B"></option>
+      <option ng-repeat="team in vm.league.team" value="{{team.name}}">
+        {{team.name}}
+      </option>
+    </select>
+  </div>
+</div>
+
+  <div class = "team-info">
+    <div class="team-display">
+      <p>This is where we'll put Team 1 players and fixtures</p>
+    </div>
+    <div class="team-display">
+      <p>This is where we'll put Team 2 players and fixtures</p>
+    </div>
+  </div>
+
+  <h3>FIXTURES</h3>
