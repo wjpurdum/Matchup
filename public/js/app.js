@@ -19,7 +19,7 @@ angular
     "$scope",
     "$http",
     "LeagueFactory",
-    LeagueIndexControllerFunction,
+    LeagueIndexControllerFunction
 
   ])
   .controller("LeagueShowController", [
