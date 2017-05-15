@@ -19,7 +19,8 @@ angular
     "$scope",
     "$http",
     "LeagueFactory",
-    LeagueIndexControllerFunction
+    LeagueIndexControllerFunction,
+
   ])
   .controller("LeagueShowController", [
     "LeagueFactory",
@@ -38,7 +39,14 @@ angular
     "TeamFactory",
     TeamShowControllerFunction
   ])
-
+  .controller("TeamShowController", [
+    "$scope",
+    "$http",
+    "$stateParams",
+    "$resource",
+    "TeamFactory",
+    TeamShowControllerFunction
+  ])
 
   function RouterFunction($stateProvider) {
     $stateProvider
@@ -101,7 +109,7 @@ function TeamShowControllerFunction($scope, $http, $stateParams, $resource, Team
   this.team = TeamFactory.get({id: $stateParams.id})
 
   // Use API call to access player data
-  let url = "http://api.football-data.org/v1/teams/338/players"
+  let url = "http://api.football-data.org/v1/teams/340/players"
   $http.get(url).success( function(response) {
     $scope.league = response
     // Set all players to a variable
@@ -111,7 +119,8 @@ function TeamShowControllerFunction($scope, $http, $stateParams, $resource, Team
       // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
       let playerDob = allPlayers[i].dateOfBirth
       let playerYob = parseInt(playerDob.substring(0, 5))
-      let currentYear = 2017
+      let currentDate = new Date()
+      let currentYear = currentDate.getFullYear()
       console.log(`Name: ${allPlayers[i].name} | Position: ${allPlayers[i].position} | Age: ${currentYear - playerYob} | Nationality: ${allPlayers[i].nationality}`)
     }
   })
