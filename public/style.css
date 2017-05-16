@@ -143,11 +143,16 @@ header a:hover {
 
 .date {
   width: 220px;
+  font-weight: bold;
 }
 
 .home {
   width: 220px;
   text-align: right;
+}
+
+.home a {
+
 }
 
 .away {
@@ -157,6 +162,8 @@ header a:hover {
 
 .result {
   width: 200px;
+  color: #93B900;
+  font-weight: bold;
 }
 
 .team-header {
