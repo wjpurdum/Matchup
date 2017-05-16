@@ -120,17 +120,17 @@ function TeamShowControllerFunction(  $scope,
     // Loop through and print player information
     for(var i = 0; i < allPlayers.length; i++){
       // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
-      self.players.push(allPlayers[i].name)
-      self.players.push(allPlayers[i].position)
-      self.players.push(allPlayers[i].jerseyNumber)
-      self.players.push(allPlayers[i].nationality)
+      self.players.push(allPlayers[i])
+      // self.players.push(allPlayers[i].position)
+      // self.players.push(allPlayers[i].jerseyNumber)
+      // self.players.push(allPlayers[i].nationality)
       let playerDob = allPlayers[i].dateOfBirth
       let playerYob = parseInt(playerDob.substring(0, 5))
       let currentDate = new Date()
       let currentYear = currentDate.getFullYear()
       // console.log(`Name: ${allPlayers[i].name} | Position: ${allPlayers[i].position} | Age: ${currentYear - playerYob} | Nationality: ${allPlayers[i].nationality}`)
     }
-    console.log(this.players)
+    console.log(self.players)
   })
 }
 
