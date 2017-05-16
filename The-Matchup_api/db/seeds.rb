@@ -196,7 +196,7 @@ Team.create([
   },
   {
     team_name: "Barnsley FC",
-    crest_url: "http://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg",
+    crest_url: "https://upload.wikimedia.org/wikipedia/en/c/c9/Barnsley_FC.svg",
     league: english_league,
     fixtures: "http://api.football-data.org/v1/teams/357/fixtures",
     self: "http://api.football-data.org/v1/teams/357",
@@ -365,12 +365,12 @@ Team.create([
     players: "http://api.football-data.org/v1/teams/1081/players "
   },
   {
-    team_name: "",
-    crest_url:"",
+    team_name: "Nottingham Forest",
+    crest_url:"https://upload.wikimedia.org/wikipedia/en/d/d2/Nottingham_Forest_logo.svg",
     league: english_league,
-    fixtures: " ",
+    fixtures: "http://api.football-data.org/v1/teams/351/fixtures",
     self: "http://api.football-data.org/v1/teams/351 ",
-    players: " "
+    players: "http://api.football-data.org/v1/teams/351/players"
   },
   {
     team_name: "Nottingham Forest",
