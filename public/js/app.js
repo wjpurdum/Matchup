@@ -133,6 +133,7 @@ function TeamShowControllerFunction($scope, $http, LeagueFactory, TeamFactory, $
 function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
   this.fixtures = []
+  $scope.showfixtures = false;
 
   this.teamOne = "0"
   this.teamTwo = "0"
@@ -142,6 +143,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
 
 
   this.grabFixtures = function(){
+    $scope.showfixtures = true;
     var url = ""
     console.log(params)
     if (params == "2") {
