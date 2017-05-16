@@ -133,21 +133,25 @@ function TeamShowControllerFunction($scope, $http, LeagueFactory, TeamFactory, $
 function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
   this.fixtures = []
-  let params = $stateParams.id
+
   this.teamOne = "0"
   this.teamTwo = "0"
   let self = this
+  let params = $stateParams.id
+
 
 
   this.grabFixtures = function(){
+    var url = ""
     console.log(params)
-    // if params = "2" {
-    //   (let url = "http://api.football-data.org/v1/competitions/427/fixtures")
-    // } else {
-    //   (let url = "http://api.football-data.org/v1/competitions/426/fixtures")
-    // }
+    if (params == "2") {
+      var url = "http://api.football-data.org/v1/competitions/427/fixtures"
+    } else {
+      var url = "http://api.football-data.org/v1/competitions/426/fixtures"
+    }
+    console.log(url)
     console.log('clicked')
-    let url = "http://api.football-data.org/v1/competitions/426/fixtures"
+    // let url = "http://api.football-data.org/v1/competitions/426/fixtures"
     $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}})
       .success( function(response) {
          //$scope.leagues = response
