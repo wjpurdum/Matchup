@@ -100,24 +100,26 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   })
 
 }
-function TeamShowControllerFunction($scope, $http, TeamFactory, $stateParams, $resource){
-  // this.team = TeamFactory.get({id: $stateParams.id})
+function TeamShowControllerFunction($scope, $http, LeagueFactory, TeamFactory, $stateParams, $resource){
   this.team = TeamFactory.get({id: $stateParams.id})
+  this.league = LeagueFactory.get({id: $stateParams.id})
   this.players = []
   let self = this
   // Use API call to access player data
-  let url = this.team.players
+  // let url = this.team.players
+  let url = "http://api.football-data.org/v1/teams/322/players"
   $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
     // $scope.league = response
     // Set all players to a variable
+    self.players = []
     let allPlayers = response.players
     // Loop through and print player information
     for(var i = 0; i < allPlayers.length; i++){
       // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
-      this.players.push(allPlayers[i].name)
-      this.players.push(allPlayers[i].position)
-      this.players.push(allPlayers[i].jerseyNumber)
-      this.players.push(allPlayers[i].nationality)
+      self.players.push(allPlayers[i].name)
+      self.players.push(allPlayers[i].position)
+      self.players.push(allPlayers[i].jerseyNumber)
+      self.players.push(allPlayers[i].nationality)
       let playerDob = allPlayers[i].dateOfBirth
       let playerYob = parseInt(playerDob.substring(0, 5))
       let currentDate = new Date()

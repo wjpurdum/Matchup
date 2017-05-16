@@ -50,8 +50,8 @@
     <div ng-repeat="fixture in vm.fixtures">
       <div class="table-row">
         <p>{{ fixture.date }}</p>
-        <p><a ui-sref="teamShow({id: team.id})">{{ fixture.homeTeamName }}</a></p>
-        <p><a ui-sref="teamShow({id: team.id})">{{ fixture.awayTeamName }}</a></p>
+        <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.homeTeamName }}</a></p>
+        <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.awayTeamName }}</a></p>
         <p>{{ fixture.result.goalsHomeTeam }} | {{ fixture.result.goalsAwayTeam }}</p>
       </div>
     </div>
