@@ -136,7 +136,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
   this.grabFixtures = function(){
     console.log('clicked')
   let url = "http://api.football-data.org/v1/competitions/426/fixtures"
-    $http.get(url, {headers:{'X-Auth-Token':'f6cb91b4ca1a41bd9f94afbbe66c06d1'}})
+    $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}})
       .success( function(response) {
          //$scope.leagues = response
          // Set all fixtures into a variable
