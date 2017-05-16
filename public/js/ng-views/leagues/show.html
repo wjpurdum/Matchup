@@ -29,7 +29,7 @@
     <button id="match-up" ng-class="button-style" ng-click="vm.grabFixtures()">Match Up!</button>
   </div>
 
-  <div id="fixtures">
+  <div id="fixtures" ng-show="showfixtures">
     <h2>Games</h2>
     <div class="table-header">
       <p class="header-text">Date</p>
@@ -38,18 +38,19 @@
 
     <div ng-repeat="fixture in vm.fixtures">
       <div class="table-row">
+
         <div class="date">
           <p>{{ fixture.date }}</p>
         </div>
         <div class="home-away">
           <div class="home">
-            <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.homeTeamName }}</a></p>
+            <p><a ui-sref="teamShow({league_id: vm.league.id, id: fixture.homeTeamId})">{{ fixture.homeTeamName }}</a></p>
           </div>
           <div class="result">
             <p>{{ fixture.result.goalsHomeTeam }} | {{ fixture.result.goalsAwayTeam }}</p>
           </div>
           <div class="away">
-            <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.awayTeamName }}</a></p>
+            <p><a ui-sref="teamShow({league_id: vm.league.id, id: fixture.awayTeamId})">{{ fixture.awayTeamName }}</a></p>
           </div>
         </div>
       </div>
