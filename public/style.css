@@ -158,3 +158,22 @@ header a:hover {
 .result {
   width: 200px;
 }
+
+.team-header {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-header h2 {
+  font-size: 20px;
+  color: #93B900;
+}
+
+.player-table {
+  margin-top: 40px;
+}
