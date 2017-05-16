@@ -1,9 +1,10 @@
 <!-- 4 columns: name, position, jersey, nationality, dateOfBirth -->
+<div class="team-header">
+  <h2>{{vm.team.team_name}} Roster</h2>
+  <img src="{{vm.team.crest_url}}" alt="Team Crest">
+</div>
 
-<h2>{{vm.team.team_name}} Roster</h2>
-<img src="{{vm.team.crest_url}}" alt="Team Crest">
-
-<div id="players">
+<div id="players" class="player-table">
   <div class="table-header">
     <p>Player</p>
     <p>Position</p>

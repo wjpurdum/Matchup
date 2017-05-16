@@ -60,16 +60,23 @@ header a:hover {
 }
 
 .select h2 {
-  font-size: 28px;
+  font-size: 36px;
   text-transform: uppercase;
   font-family: 'Arvo', serif;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
 }
 
 .league-list a {
   color: #fff;
   font-family: 'Work Sans', sans-serif;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
+  transition: color 0.5s ease;
+}
+
+.league-list a:hover {
+  color: #93B900;
 }
 
 .team select {
@@ -94,6 +101,11 @@ header a:hover {
   font-weight: 700;
   text-transform: uppercase;
   background: #474570;
+  transition: background-color 0.5s ease;
+}
+
+.team-button button:hover {
+  background: #93B900;
 }
 
 .table-header {
@@ -107,10 +119,61 @@ header a:hover {
   color: #4B4B4B;
 }
 
+.header-text {
+  width: 90px;
+  margin-right: 190px;
+}
+
 .table-row {
   display: flex;
   justify-content: space-around;
   font-family: 'Work Sans', sans-serif;
   color: #4B4B4B;
   background: #fff;
+}
+
+.home-away {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-away p {
+  margin-left: 10px;
+}
+
+.date {
+  width: 220px;
+}
+
+.home {
+  width: 220px;
+  text-align: right;
+}
+
+.away {
+  width: 220px;
+  text-align: left;
+}
+
+.result {
+  width: 200px;
+}
+
+.team-header {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-header h2 {
+  font-size: 20px;
+  color: #93B900;
+}
+
+.player-table {
+  margin-top: 40px;
 }
