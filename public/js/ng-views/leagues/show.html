@@ -25,35 +25,33 @@
     </div>
   </div>
 
-  <!-- <div class="team-info">
-    <div class="team-display">
-      <p>This is where we'll put Team 1 players and fixtures</p>
-    </div>
-    <div class="team-display">
-      <p>This is where we'll put Team 2 players and fixtures</p>
-    </div>
-  </div> -->
-
   <div class="team-button">
     <button id="match-up" ng-class="button-style" ng-click="vm.grabFixtures()">Match Up!</button>
   </div>
 
   <div id="fixtures">
-    <h2>Fixtures</h2>
+    <h2>Games</h2>
     <div class="table-header">
-      <p>Date</p>
-      <!-- <p>Home</p> -->
-      <!-- <p>Away</p> -->
-      <p>Results</p>
+      <p class="header-text">Date</p>
+      <p class="header-text">Results</p>
     </div>
 
     <div ng-repeat="fixture in vm.fixtures">
       <div class="table-row">
-        <p>{{ fixture.date }}</p>
-        <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.homeTeamName }}</a></p>
-        <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.awayTeamName }}</a></p>
-        <p>{{ fixture.result.goalsHomeTeam }} | {{ fixture.result.goalsAwayTeam }}</p>
-
+        <div class="date">
+          <p>{{ fixture.date }}</p>
+        </div>
+        <div class="home-away">
+          <div class="home">
+            <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.homeTeamName }}</a></p>
+          </div>
+          <div class="result">
+            <p>{{ fixture.result.goalsHomeTeam }} | {{ fixture.result.goalsAwayTeam }}</p>
+          </div>
+          <div class="away">
+            <p><a ui-sref="teamShow({league_id: league.league_id, id: league.team.id})">{{ fixture.awayTeamName }}</a></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
