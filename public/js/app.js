@@ -88,6 +88,8 @@ function LeagueIndexControllerFunction($scope, $http, LeagueFactory) {
 
   // Use API call to access fixture data
   let url = "http://api.football-data.org/v1/competitions/426/fixtures"
+  var team_one =
+  var team_two =
   $http.get(url).success( function(response) {
      $scope.leagues = response
      // Set all fixtures into a variable
@@ -128,6 +130,7 @@ function TeamShowControllerFunction($scope, $http, $stateParams, $resource, Team
 
 function LeagueShowControllerFunction(LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
+  document.GetElementbyId('matchUp').click
 }
 
 function TeamIndexControllerFunction(TeamFactory, $stateParams) {
