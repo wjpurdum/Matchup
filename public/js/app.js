@@ -35,9 +35,9 @@ angular
   .controller("TeamShowController", [
     "$scope",
     "$http",
+    "TeamFactory",
     "$stateParams",
     "$resource",
-    "TeamFactory",
     TeamShowControllerFunction
   ])
 
@@ -62,8 +62,8 @@ angular
       controllerAs: "vm"
     })
     .state("teamShow", {
-      url: "/teams/:id",
-      templateUrl: "js/ng-views/show.html",
+      url: "/leagues/:league_id/teams/:id",
+      templateUrl: "js/ng-views/teams/show.html",
       controller: "TeamShowController",
       controllerAs: "vm"
     })
@@ -73,7 +73,7 @@ function LeagueFactoryFunction($resource) {
   return $resource("http://localhost:3000/leagues/:id")
 }
 function TeamFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:id/teams/:id")
+  return $resource("http://localhost:3000/leagues/:league_id/teams/:id")
 }
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
@@ -100,50 +100,58 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   })
 
 }
-
-function TeamShowControllerFunction($scope, $http, $stateParams, $resource, TeamFactory){
+function TeamShowControllerFunction($scope, $http, TeamFactory, $stateParams, $resource){
   // this.team = TeamFactory.get({id: $stateParams.id})
+  this.team = TeamFactory.get({id: $stateParams.id})
+  this.players = []
   let self = this
   // Use API call to access player data
-  let url = "http://api.football-data.org/v1/teams/340/players"
-  $http.get(url).success( function(response) {
-    $scope.league = response
+  let url = this.team.players
+  $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
+    // $scope.league = response
     // Set all players to a variable
     let allPlayers = response.players
     // Loop through and print player information
     for(var i = 0; i < allPlayers.length; i++){
       // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
+      this.players.push(allPlayers[i].name)
+      this.players.push(allPlayers[i].position)
+      this.players.push(allPlayers[i].jerseyNumber)
+      this.players.push(allPlayers[i].nationality)
       let playerDob = allPlayers[i].dateOfBirth
       let playerYob = parseInt(playerDob.substring(0, 5))
       let currentDate = new Date()
       let currentYear = currentDate.getFullYear()
       // console.log(`Name: ${allPlayers[i].name} | Position: ${allPlayers[i].position} | Age: ${currentYear - playerYob} | Nationality: ${allPlayers[i].nationality}`)
     }
+    console.log(this.players)
   })
 }
 
 function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
-
-  document.GetElementbyId('matchUp').click
   this.fixtures = []
-
+  let params = $stateParams.id
   this.teamOne = "0"
   this.teamTwo = "0"
-
   let self = this
 
+
   this.grabFixtures = function(){
+    console.log(params)
+    // if params = "2" {
+    //   (let url = "http://api.football-data.org/v1/competitions/427/fixtures")
+    // } else {
+    //   (let url = "http://api.football-data.org/v1/competitions/426/fixtures")
+    // }
     console.log('clicked')
-  let url = "http://api.football-data.org/v1/competitions/426/fixtures"
+    let url = "http://api.football-data.org/v1/competitions/426/fixtures"
     $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}})
       .success( function(response) {
          //$scope.leagues = response
          // Set all fixtures into a variable
          let allFixtures = response.fixtures
-
          self.fixtures = []
-
          console.log(allFixtures)
          // Loop through fixtures and print fixture that selected team shares
          for(var i = 0; i < allFixtures.length; i++){
