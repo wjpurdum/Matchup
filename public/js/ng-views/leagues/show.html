@@ -42,8 +42,8 @@
     <h2>Fixtures</h2>
     <div class="table-header">
       <p>Date</p>
-      <p>Home</p>
-      <p>Away</p>
+      <!-- <p>Home</p> -->
+      <!-- <p>Away</p> -->
       <p>Results</p>
     </div>
 
@@ -51,8 +51,8 @@
       <div class="table-row">
         <p>{{ fixture.date }}</p>
         <p><a ui-sref="teamShow({id: team.id})">{{ fixture.homeTeamName }}</a></p>
-        <p><a ui-sref="teamShow({id: team.id})">{{ fixture.awayTeamName }}</a></p>
         <p>{{ fixture.result.goalsHomeTeam }} | {{ fixture.result.goalsAwayTeam }}</p>
+        <p><a ui-sref="teamShow({id: team.id})">{{ fixture.awayTeamName }}</a></p>
       </div>
     </div>
   </div>
