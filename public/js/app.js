@@ -191,8 +191,6 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
                 allFixtures[i].homeTeamId = teamTwoId;
                 allFixtures[i].awayTeamId = teamOneId;
               }
-
-
               allFixtures[i].awayTeamId
               self.fixtures.push(allFixtures[i])
               console.log(self.fixtures)
