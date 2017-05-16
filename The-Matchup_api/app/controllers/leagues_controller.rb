@@ -8,6 +8,6 @@ class LeaguesController < ApplicationController
     @league = League.find(params[:id])
     @teams = @league.teams
 
-    render json: @league, include :teams
+    render json: @league, include: :teams
   end
 end
