@@ -1,7 +1,7 @@
 .team-view {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .team-info {
@@ -15,6 +15,165 @@
 
 }
 
+h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  color: white;
+  text-align: center
+}
+
 h3 {
   text-align: center;
+}
+
+body {
+  background: url('../img/matchup-bg.jpg');
+}
+
+header {
+  text-align: center;
+  font-family: 'Arvo', serif;
+  margin-top: 100px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 64px;
+  transition: font-size .2s ease-in-out;
+}
+
+header a:hover {
+  font-size: 66px;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 100px auto;
+}
+
+.select {
+  text-align: center;
+  color: #fff;
+}
+
+.select h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+}
+
+.league-list a {
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.5s ease;
+}
+
+.league-list a:hover {
+  color: #93B900;
+}
+
+.team select {
+  height: 50px;
+  width: 250px;
+  margin: 20px;
+  font-size: 1em;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.team-button button {
+  border-radius: 0;
+  padding: 10px;
+  width: 150px;
+  height: 40px;
+  border: 0;
+  margin: 50px;
+  color: #fff;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #474570;
+  transition: background-color 0.5s ease;
+}
+
+.team-button button:hover {
+  background: #93B900;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  background: #D9D9D9;
+  color: #4B4B4B;
+}
+
+.header-text {
+  width: 90px;
+  margin-right: 190px;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Work Sans', sans-serif;
+  color: #4B4B4B;
+  background: #fff;
+}
+
+.home-away {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-away p {
+  margin-left: 10px;
+}
+
+.date {
+  width: 220px;
+}
+
+.home {
+  width: 220px;
+  text-align: right;
+}
+
+.away {
+  width: 220px;
+  text-align: left;
+}
+
+.result {
+  width: 200px;
+}
+
+.team-header {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-header h2 {
+  font-size: 20px;
+  color: #93B900;
+}
+
+.player-table {
+  margin-top: 40px;
 }

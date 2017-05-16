@@ -1,7 +1,6 @@
 class LeaguesController < ApplicationController
   def index
     @leagues = League.all
-
     render json: @leagues
   end
 
@@ -10,6 +9,5 @@ class LeaguesController < ApplicationController
     @teams = @league.teams
 
     render json: @league, include: :teams
-
   end
 end

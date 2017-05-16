@@ -1,12 +1,7 @@
-<h2>Select Your League</h2>
+<section class="wrapper select">
+  <h2>Select Your League:</h2>
 
-<!-- <select id="league-select" ng-change="vm.changeTeam()" ng-model="vm.league">
-  <option value = "0" label = "Select Your League"></option>
-  <option ng-repeat="league in vm.leagues" value="{{league.name}}" >
-    {{league.name}}
-  </option>
-</select> -->
-
-<div data-ng-repeat="league in vm.leagues">
- <p><a data-ui-sref="leagueShow({id: league.id})">{{league.name}}</a></p>
-</div>
+  <div class="league-list" data-ng-repeat="league in vm.leagues">
+   <p><a data-ui-sref="leagueShow({id: league.id})" class="hvr-grow">{{league.name}}</a></p>
+  </div>
+</section>
