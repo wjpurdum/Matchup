@@ -70,10 +70,10 @@ angular
   }
 
 function LeagueFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:id")
+  return $resource("https://match-up.herokuapp.com/leagues/:id")
 }
 function TeamFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:league_id/teams/:id")
+  return $resource("https://match-up.herokuapp.com/leagues/:league_id/teams/:id")
 }
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
