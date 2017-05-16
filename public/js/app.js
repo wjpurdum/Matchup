@@ -122,9 +122,9 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          //$scope.leagues = response
          // Set all fixtures into a variable
          let allFixtures = response.fixtures
-        
-         self.fixtures = []
 
+         self.fixtures = []
+         
         // console.log(allFixtures)
          // Loop through fixtures and print fixture that selected team shares
          for(var i = 0; i < allFixtures.length; i++){
