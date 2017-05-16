@@ -111,10 +111,42 @@ header a:hover {
   color: #4B4B4B;
 }
 
+.header-text {
+  width: 90px;
+  margin-right: 190px;
+}
+
 .table-row {
   display: flex;
   justify-content: space-around;
   font-family: 'Work Sans', sans-serif;
   color: #4B4B4B;
   background: #fff;
+}
+
+.home-away {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-away p {
+  margin-left: 10px;
+}
+
+.date {
+  width: 220px;
+}
+
+.home {
+  width: 220px;
+  text-align: right;
+}
+
+.away {
+  width: 220px;
+  text-align: left;
+}
+
+.result {
+  width: 200px;
 }
