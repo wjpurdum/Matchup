@@ -18,3 +18,13 @@
 h3 {
   text-align: center;
 }
+
+.title h1 {
+  width: 50%;
+  text-align: center;
+  color: red;
+}
+
+.title h1 a {
+  color: red;
+}
