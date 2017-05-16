@@ -20,6 +20,7 @@ angular
     "$http",
     "LeagueFactory",
     LeagueIndexControllerFunction
+
   ])
   .controller("LeagueShowController", [
     "$scope",
@@ -165,8 +166,10 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          //$scope.leagues = response
          // Set all fixtures into a variable
          let allFixtures = response.fixtures
+
          self.fixtures = []
          console.log(allFixtures)
+
 
          teamOneMatch = self.league.teams.find((el, idx, arr)=>{
            return el.name = self.teamOne;
@@ -181,6 +184,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          for(var i = 0; i < allFixtures.length; i++){
             if((self.teamOne == allFixtures[i].homeTeamName || self.teamOne == allFixtures[i].awayTeamName)
             && (self.teamTwo == allFixtures[i].homeTeamName || self.teamTwo == allFixtures[i].awayTeamName)){
+
               console.log(allFixtures[i])
 
               if(allFixtures[i].homeTeamName == self.teamOne){
@@ -192,8 +196,10 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
                 allFixtures[i].awayTeamId = teamOneId;
               }
               allFixtures[i].awayTeamId
+
               self.fixtures.push(allFixtures[i])
-              console.log(self.fixtures)
+              console.log(allFixturesResult)
+            //  console.log(self.fixtures)
             }
          }
       })
