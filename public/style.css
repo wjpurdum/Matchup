@@ -15,6 +15,14 @@
 
 }
 
+h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-family: 'Arvo', serif;
+  color: white;
+  text-align: center
+}
+
 h3 {
   text-align: center;
 }

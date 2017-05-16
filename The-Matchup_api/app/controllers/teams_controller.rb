@@ -6,8 +6,8 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @league = League.find(params[:league_id])
     @team = Team.find(params[:id])
-
-    render json: @team
+    render json: @team, include: :league
   end
 end
