@@ -187,14 +187,6 @@ Team.create([
     players: "http://api.football-data.org/v1/teams/563/players"
   },
   {
-    team_name: "West Ham United FC",
-    crest_url: "http://upload.wikimedia.org/wikipedia/de/e/e0/West_Ham_United_FC.svg",
-    league: premier_league,
-    fixtures: "http://api.football-data.org/v1/teams/563/fixtures",
-    self: "http://api.football-data.org/v1/teams/563",
-    players: "http://api.football-data.org/v1/teams/563/players"
-  },
-  {
     team_name: "Barnsley FC",
     crest_url: "https://upload.wikimedia.org/wikipedia/en/c/c9/Barnsley_FC.svg",
     league: english_league,
