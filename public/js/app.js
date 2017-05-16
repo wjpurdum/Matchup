@@ -125,7 +125,6 @@ function TeamShowControllerFunction($scope, $http, $stateParams, $resource, Team
 function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams) {
   this.league = LeagueFactory.get({id: $stateParams.id})
 
-  document.GetElementbyId('matchUp').click
   this.fixtures = []
 
   this.teamOne = "0"
