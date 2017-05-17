@@ -7,7 +7,8 @@ angular
     "$stateProvider",
     RouterFunction
   ])
-  .factory("LeagueFactory", [
+  .
+("LeagueFactory", [
     "$resource",
     LeagueFactoryFunction
   ])
@@ -79,28 +80,8 @@ function TeamFactoryFunction($resource) {
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   this.leagues = LeagueFactory.query()
-  console.log(this.league)
-  // Use API call to access fixture data
-  let url = "http://api.football-data.org/v1/competitions/426/fixtures"
-  // var team_one =
-  // var team_two =
-  $http.get(url).success( function(response) {
-     $scope.leagues = response
-     // Set all fixtures into a variable
-     let allFixtures = response.fixtures
-     // Assign variables to drop down selection of teams
-     let teamOne = "Southampton FC"
-     let teamTwo = "Stoke City FC"
-     console.log(allFixtures)
-     // Loop through fixtures and print fixture that selected team shares
-     for(var i = 0; i < allFixtures.length; i++){
-        if((teamOne == allFixtures[i].homeTeamName || teamOne == allFixtures[i].awayTeamName) && (teamTwo == allFixtures[i].homeTeamName || teamTwo == allFixtures[i].awayTeamName)){
-          console.log(allFixtures[i])
-        }
-     }
-  })
-
 }
+
 function TeamShowControllerFunction( $scope,
   $http,
   TeamFactory,
