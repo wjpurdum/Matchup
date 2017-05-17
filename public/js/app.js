@@ -157,15 +157,11 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
 
     $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}})
       .success( function(response) {
-        console.log(self.league.teams, "thse are the teams")
-         //$scope.leagues = response
-         // Set all fixtures into a variable
          let allFixtures = response.fixtures
          self.fixtures = []
          teamOneMatch = self.league.teams.find((el, idx, arr)=>{
            return el.team_name == self.teamOne;
          })
-         console.log(allFixtures)
          teamTwoMatch = self.league.teams.find((el, idx, arr)=>{
            return el.team_name == self.teamTwo;
          })
