@@ -71,10 +71,10 @@ angular
   }
 
 function LeagueFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:id")
+  return $resource("https://match-up.herokuapp.com/leagues/:id")
 }
 function TeamFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:league_id/teams/:id")
+  return $resource("https://match-up.herokuapp.com/leagues/:league_id/teams/:id")
 }
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
@@ -110,6 +110,7 @@ function TeamShowControllerFunction( $scope,
   this.playersUrl
   this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id}).$promise.then(function(response){
     $http.get(response.players, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
+      console.log('ran')
       self.players = []
       let allPlayers = response.players
       // Loop through and print player information
