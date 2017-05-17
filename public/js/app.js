@@ -71,10 +71,10 @@ angular
   }
 
 function LeagueFactoryFunction($resource) {
-  return $resource("https://match-up.herokuapp.com/leagues/:id")
+  return $resource("http://localhost:3000/leagues/:id")
 }
 function TeamFactoryFunction($resource) {
-  return $resource("https://match-up.herokuapp.com/leagues/:league_id/teams/:id")
+  return $resource("http://localhost:3000/leagues/:league_id/teams/:id")
 }
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
@@ -82,6 +82,8 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   console.log(this.league)
   // Use API call to access fixture data
   let url = "http://api.football-data.org/v1/competitions/426/fixtures"
+  // var team_one =
+  // var team_two =
   $http.get(url).success( function(response) {
      $scope.leagues = response
      // Set all fixtures into a variable
@@ -99,34 +101,30 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   })
 
 }
-function TeamShowControllerFunction(  $scope,
+function TeamShowControllerFunction( $scope,
   $http,
   TeamFactory,
   $stateParams,
   $resource){
-  this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id})
-  // this.league = LeagueFactory.get({id: $stateParams.id})
-  this.players = []
   let self = this
-  // Use API call to access player data
+  this.playersUrl
+  this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id}).$promise.then(function(response){
+    $http.get(response.players, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
+      self.players = []
+      let allPlayers = response.players
+      // Loop through and print player information
+      for(var i = 0; i < allPlayers.length; i++){
+        // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
+        self.players.push(allPlayers[i])
+        let playerDob = allPlayers[i].dateOfBirth
+        let playerYob = parseInt(playerDob.substring(0, 5))
+        let currentDate = new Date()
+        let currentYear = currentDate.getFullYear()
+        // console.log(`Name: ${allPlayers[i].name} | Position: ${allPlayers[i].position} | Age: ${currentYear - playerYob} | Nationality: ${allPlayers[i].nationality}`)
+      }
 
-  let url = "http://api.football-data.org/v1/teams/322/players"
-  $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
+    })
 
-    self.players = []
-    let allPlayers = response.players
-    // Loop through and print player information
-    for(var i = 0; i < allPlayers.length; i++){
-     
-      self.players.push(allPlayers[i])
-      
-      let playerDob = allPlayers[i].dateOfBirth
-      let playerYob = parseInt(playerDob.substring(0, 5))
-      let currentDate = new Date()
-      let currentYear = currentDate.getFullYear()
-     
-    }
-    console.log(self.players)
   })
 }
 
@@ -141,6 +139,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
   let self = this
   let params = $stateParams.id
   this.grabFixtures = function(){
+    // console.log("this is teams!", this.league.teams)
     $scope.showfixtures = true;
     var url = ""
 
@@ -163,7 +162,8 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          })
          teamOneId = teamOneMatch.id;
          teamTwoId = teamTwoMatch.id;
-         self.fixtures = []
+         console.log("team one ID", teamOneId)
+         console.log("team two ID", teamTwoId)
          // Loop through fixtures and print fixture that selected team shares
          for(var i = 0; i < allFixtures.length; i++){
             if((self.teamOne == allFixtures[i].homeTeamName || self.teamOne == allFixtures[i].awayTeamName)
