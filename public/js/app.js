@@ -166,7 +166,6 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          //$scope.leagues = response
          // Set all fixtures into a variable
          let allFixtures = response.fixtures
-<<<<<<< HEAD
 
          self.fixtures = []
          console.log(allFixtures)
@@ -181,12 +180,12 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          })
          teamOneId = teamOneMatch.id;
          teamTwoId = teamTwoMatch.id;
-=======
+
 
          self.fixtures = []
-         
+
         // console.log(allFixtures)
->>>>>>> checkcode
+
          // Loop through fixtures and print fixture that selected team shares
          for(var i = 0; i < allFixtures.length; i++){
             if((self.teamOne == allFixtures[i].homeTeamName || self.teamOne == allFixtures[i].awayTeamName)
