@@ -184,7 +184,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
 =======
 
          self.fixtures = []
-         
+
         // console.log(allFixtures)
 >>>>>>> checkcode
          // Loop through fixtures and print fixture that selected team shares
