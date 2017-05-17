@@ -20,6 +20,7 @@ angular
     "$http",
     "LeagueFactory",
     LeagueIndexControllerFunction
+
   ])
   .controller("LeagueShowController", [
     "$scope",
@@ -158,6 +159,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
     $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}})
       .success( function(response) {
          let allFixtures = response.fixtures
+
          self.fixtures = []
          teamOneMatch = self.league.teams.find((el, idx, arr)=>{
            return el.team_name == self.teamOne;
@@ -183,7 +185,9 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
                 allFixtures[i].awayTeamId = teamOneId;
               }
               allFixtures[i].awayTeamId
+
               self.fixtures.push(allFixtures[i])
+
             }
          }
       })
