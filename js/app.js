@@ -7,8 +7,7 @@ angular
     "$stateProvider",
     RouterFunction
   ])
-  .
-("LeagueFactory", [
+  .factory("LeagueFactory", [
     "$resource",
     LeagueFactoryFunction
   ])
