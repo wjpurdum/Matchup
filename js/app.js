@@ -88,7 +88,9 @@ function TeamShowControllerFunction( $scope,
   $resource){
   let self = this
   this.playersUrl
-  this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id}).$promise.then(function(response){
+  this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id})
+  
+  this.team.$promise.then(function(response){
     $http.get(response.players, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
       console.log('ran')
       self.players = []
