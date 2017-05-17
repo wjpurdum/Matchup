@@ -71,10 +71,10 @@ angular
   }
 
 function LeagueFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:id")
+  return $resource("https://match-up.herokuapp.com/leagues/:id")
 }
 function TeamFactoryFunction($resource) {
-  return $resource("http://localhost:3000/leagues/:league_id/teams/:id")
+  return $resource("https://match-up.herokuapp.com/leagues/:league_id/teams/:id")
 }
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
@@ -82,8 +82,6 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   console.log(this.league)
   // Use API call to access fixture data
   let url = "http://api.football-data.org/v1/competitions/426/fixtures"
-  // var team_one =
-  // var team_two =
   $http.get(url).success( function(response) {
      $scope.leagues = response
      // Set all fixtures into a variable
@@ -111,25 +109,22 @@ function TeamShowControllerFunction(  $scope,
   this.players = []
   let self = this
   // Use API call to access player data
-  // let url = this.team.players
+
   let url = "http://api.football-data.org/v1/teams/322/players"
   $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
-    // $scope.league = response
-    // Set all players to a variable
+
     self.players = []
     let allPlayers = response.players
     // Loop through and print player information
     for(var i = 0; i < allPlayers.length; i++){
-      // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
+     
       self.players.push(allPlayers[i])
-      // self.players.push(allPlayers[i].position)
-      // self.players.push(allPlayers[i].jerseyNumber)
-      // self.players.push(allPlayers[i].nationality)
+      
       let playerDob = allPlayers[i].dateOfBirth
       let playerYob = parseInt(playerDob.substring(0, 5))
       let currentDate = new Date()
       let currentYear = currentDate.getFullYear()
-      // console.log(`Name: ${allPlayers[i].name} | Position: ${allPlayers[i].position} | Age: ${currentYear - playerYob} | Nationality: ${allPlayers[i].nationality}`)
+     
     }
     console.log(self.players)
   })
@@ -146,7 +141,6 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
   let self = this
   let params = $stateParams.id
   this.grabFixtures = function(){
-    // console.log("this is teams!", this.league.teams)
     $scope.showfixtures = true;
     var url = ""
 
@@ -169,8 +163,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
          })
          teamOneId = teamOneMatch.id;
          teamTwoId = teamTwoMatch.id;
-         console.log("team one ID", teamOneId)
-         console.log("team two ID", teamTwoId)
+         self.fixtures = []
          // Loop through fixtures and print fixture that selected team shares
          for(var i = 0; i < allFixtures.length; i++){
             if((self.teamOne == allFixtures[i].homeTeamName || self.teamOne == allFixtures[i].awayTeamName)

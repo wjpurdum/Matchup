@@ -143,11 +143,16 @@ header a:hover {
 
 .date {
   width: 220px;
+  font-weight: bold;
 }
 
 .home {
   width: 220px;
   text-align: right;
+}
+
+.home a {
+  color: ;
 }
 
 .away {
@@ -157,16 +162,24 @@ header a:hover {
 
 .result {
   width: 200px;
+  color: #93B900;
+  font-weight: bold;
 }
 
 .team-header {
   width: 300px;
-  height: 300px;
   margin: 0 auto;
   background: #fff;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+}
+
+.team-header img {
+  max-width:100%;
+  margin: 0 auto;
+  width: 300px;
 }
 
 .team-header h2 {
@@ -175,5 +188,18 @@ header a:hover {
 }
 
 .player-table {
-  margin-top: 40px;
+  margin-top: 50px;
+}
+
+.player-detail {
+  width: 160px;
+}
+
+.number p {
+  text-align: center;
+  margin-right: 40px;
+}
+
+div.table-row:nth-child(even) {
+    background-color: #EEEEEE;
 }
