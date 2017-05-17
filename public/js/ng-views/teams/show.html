@@ -4,8 +4,9 @@
   <img src="{{vm.team.crest_url}}" alt="Team Crest">
 </div>
 
+
 <div id="players" class="player-table">
-  <div class="table-header">
+  <div class="table-header" >
     <p>Player</p>
     <p>Position</p>
     <p>Number</p>
@@ -15,76 +16,12 @@
 
 <!-- Put ng-repeat in  -->
   <div>
-    <div class="table-row">
-      <p>Player Name</p>
-      <p>Position</p>
-      <p>Number</p>
-      <p>Nationality</p>
-      <p>Age</p>
+    <div class="table-row" data-ng-repeat='player in vm.players track by $index'>
+      <p>{{player.name}}</p>
+      <p>{{player.position}}</p>
+      <p>{{player.jerseyNumber}}</p>
+      <p>{{player.nationality}}</p>
+      <!-- <p>Age</p> -->
     </div>
   </div>
 
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="team-index">
-  <div class="">
-    <h1>THE MATCHUP GAME</h1>
-    <div class="">
-      <div class="team_log">
-        <img ng-src = "">
-      </div>
-      <div class="">
-        <p><a href = "#"></a></p>
-
-      </div>
-    </div>
-    <div class="">
-      <a href ="#">Players</a>
-      <a href = "#"> Fixtures</a>
-    </div>
-  </div>
-  <div class="table">
-    <table>
-      <tr>
-        <th>DATE</th>
-        <a href = "#"></a>
-        <th>HOME</th>
-        <a href = "#"></a>
-        <th>Away</th>
-        <a href = "#"></a>
-        <th>RESULTS</th>
-        <a href = "#"></a>
-      </tr>
-    </table>
-  </div>
-  <div class="table">
-    <table>
-      <tr>
-        <th>NAME</th>
-        <a href = "#"></a>
-        <th>POSITION</th>
-        <a href = "#"></a>
-        <th>AGE</th>
-        <a href = "3"></a>
-        <th>NATIONALITY</th>
-        <a href = "#"></a>
-      </tr>
-    </table>
-  </div>
-</div> -->
