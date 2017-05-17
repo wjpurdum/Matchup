@@ -7,21 +7,41 @@
 
 <div id="players" class="player-table">
   <div class="table-header" >
-    <p>Player</p>
-    <p>Position</p>
-    <p>Number</p>
-    <p>Nationality</p>
-    <p>Age</p>
+    <div class="player-detail">
+      <p>Player</p>
+    </div>
+    <div class="player-detail">
+      <p>Position</p>
+    </div>
+    <div class="player-detail">
+      <p>Number</p>
+    </div>
+    <div class="player-detail">
+      <p>Nationality</p>
+    </div>
+    <div class="player-detail">
+      <p>DOB</p>
+    </div>
   </div>
 
 <!-- Put ng-repeat in  -->
   <div>
     <div class="table-row" data-ng-repeat='player in vm.players track by $index'>
-      <p>{{player.name}}</p>
-      <p>{{player.position}}</p>
-      <p>{{player.jerseyNumber}}</p>
-      <p>{{player.nationality}}</p>
+      <div class="player-detail">
+        <p>{{player.name}}</p>
+      </div>
+      <div class="player-detail">
+        <p>{{player.position}}</p>
+      </div>
+      <div class="player-detail number">
+        <p>{{player.jerseyNumber}}</p>
+      </div>
+      <div class="player-detail">
+        <p>{{player.nationality}}</p>
+      </div>
+      <div class="player-detail">
+        <p>{{player.dateOfBirth}}</p>
+      </div>
       <!-- <p>Age</p> -->
     </div>
   </div>
-
