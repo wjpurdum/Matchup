@@ -125,9 +125,9 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
     var url = ""
 
     if (params == "2") {
-      var url = "http://api.football-data.org/v1/competitions/427/fixtures"
+      var url = "https://api.football-data.org/v1/competitions/427/fixtures"
     } else {
-      var url = "http://api.football-data.org/v1/competitions/426/fixtures"
+      var url = "https://api.football-data.org/v1/competitions/426/fixtures"
     }
 
     $http.get(url, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}})
