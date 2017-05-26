@@ -111,14 +111,12 @@ function TeamShowControllerFunction( $scope,
       let allPlayers = response.players
       // Loop through and print player information
       for(var i = 0; i < allPlayers.length; i++){
-        // We need the players ages... the year of birth is the first 4 characters in the date of birth string value
         self.players.push(allPlayers[i])
         let playerDob = allPlayers[i].dateOfBirth
         let playerYob = parseInt(playerDob.substring(0, 5))
         let currentDate = new Date()
         let currentYear = currentDate.getFullYear()
-    })
-
+      })
   })
 }
 
@@ -135,7 +133,6 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
   this.grabFixtures = function(){
     $scope.showfixtures = true;
     var url = ""
-
     if (params == "2") {
       var url = "https://api.football-data.org/v1/competitions/427/fixtures"
     } else {
