@@ -79,11 +79,8 @@ function TeamFactoryFunction($resource) {
 
 function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   this.leagues = LeagueFactory.query()
-  console.log(this.league)
-  // Use API call to access fixture data
+  // Use API call to access game data
   let url = "http://api.football-data.org/v1/competitions/426/fixtures"
-  // var team_one =
-  // var team_two =
   $http.get(url).success( function(response) {
      $scope.leagues = response
      // Set all fixtures into a variable
@@ -91,11 +88,9 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
      // Assign variables to drop down selection of teams
      let teamOne = "Southampton FC"
      let teamTwo = "Stoke City FC"
-     console.log(allFixtures)
      // Loop through fixtures and print fixture that selected team shares
      for(var i = 0; i < allFixtures.length; i++){
         if((teamOne == allFixtures[i].homeTeamName || teamOne == allFixtures[i].awayTeamName) && (teamTwo == allFixtures[i].homeTeamName || teamTwo == allFixtures[i].awayTeamName)){
-          console.log(allFixtures[i])
         }
      }
   })
@@ -108,7 +103,8 @@ function TeamShowControllerFunction( $scope,
   $resource){
   let self = this
   this.playersUrl
-  this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id}).$promise.then(function(response){
+  this.team = TeamFactory.get({league_id: $stateParams.league_id, id: $stateParams.id})
+  this.team.$promise.then(function(response){
     $http.get(response.players, {headers:{'X-Auth-Token':'5ad07ef4d0c84fb893ca3bb738bd0a01'}}).success( function(response) {
       console.log('ran')
       self.players = []
@@ -121,9 +117,6 @@ function TeamShowControllerFunction( $scope,
         let playerYob = parseInt(playerDob.substring(0, 5))
         let currentDate = new Date()
         let currentYear = currentDate.getFullYear()
-        // console.log(`Name: ${allPlayers[i].name} | Position: ${allPlayers[i].position} | Age: ${currentYear - playerYob} | Nationality: ${allPlayers[i].nationality}`)
-      }
-
     })
 
   })
@@ -140,7 +133,6 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
   let self = this
   let params = $stateParams.id
   this.grabFixtures = function(){
-    // console.log("this is teams!", this.league.teams)
     $scope.showfixtures = true;
     var url = ""
 
