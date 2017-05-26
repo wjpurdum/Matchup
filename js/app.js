@@ -96,7 +96,7 @@ function LeagueIndexControllerFunction( $scope, $http, LeagueFactory) {
   })
 }
 
-function TeamShowControllerFunction( $scope,
+function TeamShowControllerFunction($scope,
   $http,
   TeamFactory,
   $stateParams,
@@ -116,7 +116,8 @@ function TeamShowControllerFunction( $scope,
         let playerYob = parseInt(playerDob.substring(0, 5))
         let currentDate = new Date()
         let currentYear = currentDate.getFullYear()
-      })
+      }
+    })
   })
 }
 
@@ -133,6 +134,7 @@ function LeagueShowControllerFunction($scope, $http, LeagueFactory, $stateParams
   this.grabFixtures = function(){
     $scope.showfixtures = true;
     var url = ""
+
     if (params == "2") {
       var url = "https://api.football-data.org/v1/competitions/427/fixtures"
     } else {
